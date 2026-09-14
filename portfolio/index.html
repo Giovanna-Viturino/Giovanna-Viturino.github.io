@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Giovanna Viturino de Matos Soares - Portfólio </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --paper: #F4F4F0;
+        --paper-line: #E2E1D8;
+        --ink: #1E2A2F;
+        --mustard: #D6A24B;
+        --teal: #2F6B66;
+        --row-border: #D8D6C9;
+        --max-width: 760px;
+    }
+
+    * { box-sizing:border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        margin:0;
+        background-color: var(--paper);
+        background-image: 
+        linear-gradient (var(--paper-line) 1px, transparent 1px),
+        linear-gradient (90deg, var(--paper-line) 1px, transparent 1px);
+        background-size: 100% 32px 32px 100%;
+        background-position: 0 140px, 0 0;
+        color: var (--ink);
+        font-family: 'IBM Plex Sans', sans-serif;
+        line-height:normal;
+    }
+
+    a { color: var(--teal); }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+    .wrap{
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0px 96px;
+    }
+
+    /*Header*/
+    header.hero {
+        padding:56px 0 40px;
+        border-bottom:2px solid var(--ink);
+    }
+
+    .row-id {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 13px;
+        color: var(--ink-soft);
+        letter-spacing: 0.02em;
+    }
+
+    h1.name {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 700;
+        font-size: clamp(2.4rem, 6vw, 3.4rem);
+        margin: 6px 0 2px;
+        letter-spacing: -0.01em;
+    }
+    .role {
+        font-family:'IBM Plex Mono', monospace;
+        font-size: 16px;
+        color: var(--teal);
+        margin: 0 0 20px;
+    }
+    .hero-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 14px;
+    }
+    .hero-links a { text-decoration: none; border-bottom: 1px solid var(--teal); padding-bottom: 1px; }
+    .hero-links a:hover { background: var(--mustard); border-color: var(--ink); color: var(--ink); }
+    /* Sobre */
+    section.about {
+        padding: 36px 0;
+        border-bottom: 1px solid var(--row-border);
+        max-width: 62ch;
+    }
+
+    section.about p {
+        margin: 0 0 14px;
+        color: var(--ink);
+        font-size: 16px;
+    }
+
+    section.about p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Section label */
+    .section-label {
+        font-family:'IBM Plex Mono', monospace;
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin: 40px 0 16;
+    }
+    /* Projects table */
+    .projects { border-top: 2px solid var(--ink); }
+
+    .project-row {
+        display:grid;
+        grid-template-columns: 44pc 1fr;
+        gap: 4px 18px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--row-border);
+    }
+    .project-row .content {min-width: 0; }
+    .project-row h3 {
+        margin: 00 6px;
+        font-size: 19px;
+        font-weight:600;
+    }
+    .project-row .stack {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12.5px;
+        color: var(--teal);
+        margin: 0 0 8px;
+        text-transform: lowercase;
+    }
+    .project-row p.desc{
+        margin: 0 0 10px;
+        color: var(--ink-soft);
+        font-size: 15px;
+        max-width: 56ch;
+    }
+    .project-row .link {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 13.5px;
+        text-decoration: none;
+        border-bottom: 1px solid var(--teal);
+    }
+    .project-row .link:hover { background: var(--mustard); border-color: var(--ink); color: var(--ink); }
+
+    /* Contact */
+    section.contact {
+        margin-top: 48px;
+        padding-top: 32px;
+        border-top: 2px solid var (--ink);    
+    }
+    section.contact h2 {
+        font-size: 22px;
+        margin: 00 10px;
+    }
+
+    section.contact p { color: var(--ink-soft); margin: 0 0 20px; max-width: 50ch; }
+    .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 15px;
+    }
+    .contact-list a { text-decoration: none; border-bottom: 1px solid var(--teal); }
+    .contact-list a:hover { background: var(--mustard); border-color: var(--ink); color: var(--ink); }
+    footer {
+        margin-top: 56px;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 12px;
+        color: var(--ink-soft);
+    }
+
+    @media (max-width: 480px) {
+        .project-row { grid-template-columns: 32px 1fr; }
+        header.hero { padding-top: 40px; }
+    }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <header class="hero">
+        <div class="row-id">// portfolio - registro 001</div>
+        <h1 class="name">Giovanna Viturino de Matos Soares</h1>
+        <div class="role">dados | python | sql</div>
+        <div class="hero-links">
+            <a href="https://github.com/Giovanna-Viturino" target="_blank" rel="noopener">github.com/Giovanna-Viturino</a>
+            <a href="https://br.linkedin.com/in/giovanna-viturino" target="_blank" rel="noopener">
+            <a href="giovannaviturino21@gmail.com">e-mail</a>
+            </section>
+            <div class="section-label">//projetos</div>
+            <div class="projects">
+                <div class="project-row">
+                    <div class="idx">00</div>
+                    <div class="content">
+                        <h3>Controle de Gastos</h3>
+                        <p class="stack">python | sql</p>
+                        <p class="desc">Aplicação para controle financeiro pessoal, com JOIN entre tabelas de gastos e categorias, filtragem por período e formatação de valores em R$.</p>
+                        <a class="link" href="https://github.com/Giovanna-Viturino/controle-de-gastos" target="_blank" rel="noopener">ver repositório →</a>
+                    </div>
+                </div>
+                <section class="contact">
+                    <h2>Contato</h2>
+                    <p>Aberta a oportunidades de estágio e posições júnior na área de dados.</p>
+                    <ul class="contact-list">
+                        <li><a href="giovannaviturino21@gmail.com">e-mail</a></li>
+                        <li><a href="https://github.com/Giovanna-Viturino" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://br.linkedin.com/in/giovanna-viturino" target="_blank" rel="noopener">LinkedIn</a></li>
+                    </ul>
+                </section>
+                  <footer>Osasco, SP — atualizado em 2026</footer>
+            </div>
+        </div>
+    </header>
+</div>
+</body>
+</html>
